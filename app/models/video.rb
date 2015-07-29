@@ -1,3 +1,5 @@
 class Video < ActiveRecord::Base
-  belongs_to :category, foreign_key: 'category_id'
+  belongs_to :category
+
+  validates_presence_of :title, :description
 end
