@@ -8,7 +8,10 @@
   %form.col-md-5.navbar-form(action="")
     .form-group
       %input.form-control(type="text" placeholder="Search for videos here")
-    %button.btn.btn-default(type="submit") Search
+        = form_tag("/search", method: "get")
+          = label_tag(:q, "Search for:")
+          = text_field_tag(:q)
+    %button.btn.btn-default= submit_tag("Search")
   #user_links.pull-right
     %ul
       %li.dropdown
