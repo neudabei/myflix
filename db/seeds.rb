@@ -20,3 +20,5 @@ Video.create(title: "Daredevil", description: "Marvel and Netflix show about a b
 Video.create(title: "Breaking Bad", description: "Chemistry teacher changes his life by going into the drug business.", large_cover_url: "breaking_bad.jpg", small_cover_url: "breaking_bad_small.jpg", category_id: 1)
 
 Video.create(title: "Southpark", description: "Cartman and friends.", large_cover_url: "south_park.jpg", small_cover_url: "south_park_small.jpg", category_id: 2)
+Video.create(title: "Ray Donovan", description: "fixes problems of the rich and famous in Hollywood", small_cover_url: "ray_donovan_small.jpg", large_cover_url: "ray_donovan.jpg", category_id: 1)
+Video.create(title: "Better Call Saul", description: "The life of the lawyer from Breaking Bad, before meeting Walter White", small_cover_url: "better_call_saul_small.jpg", large_cover_url: "better_call_saul.jpg", category_id: 1)
