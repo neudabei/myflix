@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  helper_method :current_user, :logged_in?
+  helper_method :current_user, :logged_in?, :rate_video
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
@@ -17,4 +17,9 @@ class ApplicationController < ActionController::Base
       redirect_to login_path
     end
   end
+
+  def rate_video
+    options_for_select([5,4,3,2,1].map {|number| [pluralize(number, "Star")]})
+  end
+
 end

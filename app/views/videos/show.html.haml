@@ -13,7 +13,7 @@
 %section.reviews.container
   .row
     .col-sm-10.col-sm-offset-1
-      = form_for [@video, Review.new] do |f|
+      = bootstrap_form_for [@video, Review.new] do |f|
         %fieldset
           .form-group
             %label Rate this video
@@ -26,7 +26,7 @@
               .col-sm-8
                 = f.text_area :content, rows: 6, class: "form-control"
         %fieldset.form-group.actions.clearfix
-          %input(type="submit" value="Submit" class="btn")
+          = f.submit "Submit"
           = link_to "Cancel", @video
       %header
         %h3 User Reviews (#{@reviews.count})
@@ -38,4 +38,4 @@
                 %span Rating: #{review.rating} / 5
                 %p by <a href="">#{review.user.full_name}</a>
               .col-sm-8
-                %p #{review.content}
+                %p= review.content

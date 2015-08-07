@@ -35,17 +35,17 @@ describe SessionsController do
     context "with invalid credentials" do
       let(:alice) {Fabricate(:user)}
       it "doesn't put the user in the session" do
-        post :create, email: alice.email, password: alice.password + "wrong_password"
+        post :create, email: alice.email, password: "wrong_password"
         expect(session[:user_id]).to eq(nil)
       end
 
       it "redirects to the sign in page" do
-        post :create, email: alice.email, password: alice.password + "wrong_password"
+        post :create, email: alice.email, password: "wrong_password"
         expect(response).to redirect_to login_path
       end
 
       it "sets the error message" do
-        post :create, email: alice.email, password: alice.password + "wrong_password"
+        post :create, email: alice.email, password: "wrong_password"
         expect(flash[:error]).not_to be_blank
       end
     end
