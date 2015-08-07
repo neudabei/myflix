@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Category do 
-  it {should have_many(:video)}
+  it {should have_many(:videos)}
   it {should validate_presence_of(:name)}
 
   describe "#recent_videos" do # #sign when we test instance methods
@@ -39,8 +39,6 @@ describe Category do
     end
 
   end
-
-  it {should have_many(:videos)}
   
   # it "saves itself" do
   #   category = Category.new(name: "scifi")
