@@ -31,9 +31,5 @@ class QueueItemsController < ApplicationController
   def current_user_queued_video?(video)
     current_user.queue_items.map(&:video).include?(video)
   end
-    
-  def queue_items_params
-    params.require(:queue_item).permit!
-  end
 
 end

@@ -34,6 +34,7 @@ describe QueueItemsController do
 
     it "creates a queue item that is associated with the video" do
       session[:user_id] = Fabricate(:user).id
+      video = Fabricate(:video)
       post :create, video_id: video.id
       expect(QueueItem.first.video).to eq(video)
     end
@@ -96,9 +97,11 @@ describe QueueItemsController do
       delete :destroy, id: queue_item.id
       expect(QueueItem.count).to eq(1)
     end
+
     it "redirects to the sign in page unauthenticated users" do
       delete :destroy, id: 3
       expect(response).to redirect_to login_path
     end
+
   end
 end
