@@ -1,12 +1,12 @@
 class QueueItemsController < ApplicationController
-  before_filter :require_user
+  before_action :require_user
 
   def index
     @queue_items = current_user.queue_items
   end
 
   def create
-    video = Video.find(params[:video_id]) # should be Video.find(queue_items_params)
+    video = Video.find(params[:video_id])
     queue_video(video)
     redirect_to my_queue_path 
   end
