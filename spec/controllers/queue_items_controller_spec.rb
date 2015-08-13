@@ -94,7 +94,7 @@ describe QueueItemsController do
       session[:user_id] = alice.id
       queue_item1 = Fabricate(:queue_item, user: alice, position: 1)
       queue_item2 = Fabricate(:queue_item, user: alice, position: 2)
-      
+
       delete :destroy, id: queue_item1.id
       expect(QueueItem.first.position).to eq(1)
     end
@@ -175,7 +175,7 @@ describe QueueItemsController do
       end
     end
     context "with unauthenticated users" do
-      it "redirect to the sign in path" do
+      it "redirect to the login path" do
         post :update_queue, queue_items: [{id: 2, position: 3}, {id: 5, position: 2}]
         expect(response).to redirect_to login_path
       end
