@@ -9,14 +9,55 @@ feature "User interacts with the queue" do
     americans = Fabricate(:video, title: "The Americans", category: tv_show)
 
     sign_in
-    find("a[href='/videos/#{peaky_blinders.id}']").click
-    page.should have_content(peaky_blinders.title)
 
-    click_link("+ My Queue")
-    page.should have_content(peaky_blinders.title)
+    add_video_to_queue(peaky_blinders)
+    expect_video_to_be_in_queue(peaky_blinders)
 
     visit video_path(peaky_blinders)
-    page.should_not_have_content("+ My Queue")
+    expect_link_not_to_be_seen("+ My Queue")
+
+    add_video_to_queue(daredevil)
+    add_video_to_queue(americans)
+
+    set_video_position(peaky_blinders, 3)
+    set_video_position(daredevil, 1)
+    set_video_position(americans, 2) 
+
+    update_queue
+
+    expect_video_position(daredevil, 1)
+    expect_video_position(peaky_blinders, 3)
+    expect_video_position(americans, 2)
 
   end
+
+
+  def expect_video_to_be_in_queue(video)
+    page.should have_content(video.title)
+  end
+
+  def expect_link_not_to_be_seen(link_text)
+    page.should_not have_content(link_text)
+  end
+
+  def update_queue
+    click_button "Update Instant Queue"
+  end
+
+  def add_video_to_queue(video)
+    visit home_path
+    find("a[href='/videos/#{video.id}']").click
+    click_link "+ My Queue"
+  end
+
+  def set_video_position(video, position)
+    within(:xpath, "//tr[contains(.,'#{video.title}')]") do
+      fill_in "queue_items[][position]", with: position
+    end
+  end
+
+  def expect_video_position(video, position)
+    expect(find(:xpath, "//tr[contains(.,'#{video.title}')]//input[@type='text']").value).to eq(position.to_s)
+  end
+    
 end
