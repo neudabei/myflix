@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_filter :require_user, only: [:show]
 
   def new
     redirect_to home_path if current_user
@@ -12,6 +13,10 @@ class UsersController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @user = User.find(params[:id])
   end
 
   def user_params
