@@ -30,4 +30,6 @@ nbproject
 *.sublime-workspace
 .idea
 
-config/local_env.yml
+# Ignore ENV files
+application.yml
+/config/local_env.yml
