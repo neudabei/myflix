@@ -9,6 +9,7 @@
             = f.email_field :email, label: "Email Address"
           .row
             = f.password_field :password
+
           / .form-group
           /   %label Email Address
           /   .row
@@ -21,4 +22,5 @@
           /       %input.form-control(type="password")
         %fieldset.form-group.action
           %input(type="submit" value="Sign in" class="btn btn-default")
-          = link_to "Forgot password?", forgot_passwords_path
+            .row
+            = link_to "Forgot password?", forgot_passwords_path

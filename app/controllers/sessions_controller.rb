@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      user.token = nil
+      user.update_column(:token, nil) # reset the token column to nil after a password has been reset
       flash[:notice] = "Welcome, you've logged in."
       redirect_to home_path
     else
