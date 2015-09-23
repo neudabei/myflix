@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe PasswordResetController do
+describe PasswordResetsController do
   describe "GET show" do
 
     it "renders show template if the token is valid" do
