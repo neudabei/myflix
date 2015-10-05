@@ -9,7 +9,7 @@ Myflix::Application.routes.draw do
     resources :reviews, only: [:create]
   end
 
-  resources :users, only: [:show]
+  resources :users, only: [:show, :create]
   get 'people', to: 'relationships#index'
   resources :relationships, only: [:create, :destroy]
 
@@ -26,8 +26,6 @@ Myflix::Application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
-
-  resources :users, only: [:create]
 
   # forgot password actions
   get 'forgot_passwords', to: 'forgot_passwords#new'
