@@ -28,15 +28,30 @@ describe User do
       alice = Fabricate(:user)
       bob = Fabricate(:user)
       Fabricate(:relationship, leader: bob, follower: alice)
-      expect(alice.follows?(bob)).to be_true
+      expect(alice.follows?(bob)).to be true
     end
     
     it "returns false if the user has a following relationship with the current user" do
       alice = Fabricate(:user)
       bob = Fabricate(:user)
       Fabricate(:relationship, leader: alice, follower: bob)
-      expect(alice.follows?(bob)).to be_false
+      expect(alice.follows?(bob)).to be false
     end
 
+  end
+
+  describe "#follow" do
+    it "follows another user" do
+      alice = Fabricate(:user)
+      bob = Fabricate(:user)
+      alice.follow(bob)
+      expect(alice.follows?(bob)).to be true
+    end
+
+    it "does not follow one self" do
+      alice = Fabricate(:user)
+      alice.follow(alice)
+      expect(alice.follows?(alice)).to be false
+    end
   end
 end

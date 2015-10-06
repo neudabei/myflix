@@ -12,6 +12,8 @@ feature "User resets password" do
     open_email_and_click_reset_password_link
     enter_new_password
     sign_in_with_new_password
+
+    clear_email # clears the email queue
   end
 end
 
