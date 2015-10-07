@@ -2,11 +2,19 @@ module Tokenable
   extend ActiveSupport::Concern
 
   included do
-    before_create :set_token_in_invitation_table
+    unless self == User
+      after_create :update_with_token!
+    end
   end
 
-  def set_token_in_invitation_table
-    self.token = SecureRandom.urlsafe_base64
+  def update_with_token!
+    update_column(:token, generate_token)
+  end
+
+  private
+
+  def generate_token
+    SecureRandom.urlsafe_base64
   end
 
 end

@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+
+  include Tokenable
   
   validates_presence_of :email, :password, :full_name
   validates_uniqueness_of :email
@@ -31,14 +33,5 @@ class User < ActiveRecord::Base
   def follow(another_user)
     following_relationships.create(leader: another_user) if can_follow?(another_user)
   end
-
-  def update_with_token!
-    update_column(:token, generate_token)
-  end
-
-  private
-
-  def generate_token
-    SecureRandom.urlsafe_base64
-  end
+  
 end
