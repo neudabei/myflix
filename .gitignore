@@ -32,4 +32,3 @@ nbproject
 
 # Ignore ENV files
 application.yml
-/config/local_env.yml

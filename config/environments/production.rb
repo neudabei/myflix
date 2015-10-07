@@ -26,8 +26,8 @@ Myflix::Application.configure do
     :address              => 'smtp.mandrillapp.com'
     :port                 => 587
     :domain               => 'myflix-092015.herokuapp.com'
-    :user_name            => ENV['MANDRILL_USERNAME']
-    :password             => ENV['MANDRILL_APP_KEY']
+    :user_name            => ENV["mandrill_username"]
+    :password             => ENV['mandrill_api_key']
     :authentication       => 'plain'
     :enable_starttls_auto => true
   }
