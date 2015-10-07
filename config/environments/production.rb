@@ -23,13 +23,13 @@ Myflix::Application.configure do
   config.action_mailer.delivery_method = :smtp
 
   config.action_mailer.smtp_settings = {
-    :address              => 'smtp.mandrillapp.com'
-    :port                 => 587
-    :domain               => 'myflix-092015.herokuapp.com'
-    :user_name            => ENV["mandrill_username"]
-    :password             => ENV['mandrill_api_key']
-    :authentication       => 'plain'
-    :enable_starttls_auto => true
+    address:              'smtp.mandrillapp.com',
+    port:                 587,
+    domain:               'myflix-092015.herokuapp.com',
+    user_name:            ENV["mandrill_username"],
+    password:             ENV['mandrill_api_key'],
+    authentication:       'plain',
+    enable_starttls_auto: true
   }
   
 end
