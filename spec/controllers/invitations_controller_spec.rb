@@ -19,7 +19,7 @@ describe InvitationsController do
       let(:action) { post :create }
     end
     context "with valid input" do
-      after { ActionMailer::Base.deliveries.clear }
+      # after { ActionMailer::Base.deliveries.clear } => solved via config.after(:each) { ActionMailer::Base.deliveries.clear } in spec_helper.rb
 
       it "redirects to the invitation new page" do
         set_current_user
@@ -45,6 +45,7 @@ describe InvitationsController do
         expect(flash[:success]).to be_present
       end
     end
+    
     context "with invalid input" do
       it "renders the :new template" do
         set_current_user

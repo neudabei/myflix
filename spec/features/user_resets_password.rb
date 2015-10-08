@@ -13,7 +13,7 @@ feature "User resets password" do
     enter_new_password
     sign_in_with_new_password
 
-    clear_email # clears the email queue
+    clear_emails # clears the email queue
   end
 end
 
