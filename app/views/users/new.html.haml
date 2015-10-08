@@ -8,6 +8,10 @@
           = f.email_field :email, label: "Email Address"
           = f.password_field :password
           = f.text_field :full_name, label: "Full Name"
+          = hidden_field_tag :invitation_token, @invitation_token
+          // using hidden_field_tag instead of f.hidden_field makes the invitation_token to be submitted outside of the users hash within the params
+
+          
         / %fieldset.credit_card
         /   .form-group
         /     %label.control-label.col-sm-2 Credit Card Number
