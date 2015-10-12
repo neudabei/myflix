@@ -1,3 +1,6 @@
+
+https://circleci.com/gh/:owner/:repo.svg?style=shield&circle-token=:circle-token
+
 == Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create
