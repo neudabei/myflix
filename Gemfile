@@ -40,10 +40,7 @@ group :test do
   gem 'launchy'
 end
 
-group :production do
+group :production, :staging do
   gem 'rails_12factor'
-end
-
-group :staging do
-  gem 'rails_12factor'
+  gem 'carrierwave-aws'
 end
