@@ -8,7 +8,7 @@
 
 drama = Category.create!(name: "Drama")
 cartoon = Category.create!(name: "Cartoon")
-detective = Category.create!(name: "Detectice")
+detective = Category.create!(name: "Detective")
 
 Video.create!(title: "The Wire", description: "One of the best TV shows ever made.", large_cover_url: "wire.jpg", small_cover_url: "wire_small.jpg", category: detective ) # changed from category_id: 3
 Video.create!(title: "Sopranos", description: "A very entertaining and well made TV show.", large_cover_url: "sopranos.jpg", small_cover_url: "sopranos_small.jpg", category: drama)

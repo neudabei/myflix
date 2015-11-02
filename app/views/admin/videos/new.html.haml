@@ -11,28 +11,25 @@
           %br
           %fieldset
             .form-group
-              %label.control-label.col-sm-3 Title
+              %label.control-label.col-sm-3
               .col-sm-3
                 = f.text_field :title, class: "form-control"
             .form-group
-              %label.control-label.col-sm-3 Category
+              %label.control-label.col-sm-3
               .col-sm-6
                 = f.select :category_id, options_for_select(Category.all.map {|category| [category.name, category.id]}), class: "form-control"
             .form-group
-              %label.control-label.col-sm-3 Description
+              %label.control-label.col-sm-3
               .col-sm-6
                 = f.text_area :description, rows: 8, class: "form-control"
             .form-group
-              %label.control-label.col-sm-3 Large Cover
+              %label.control-label.col-sm-3
               .col-sm-6
-                %col.btn.btn-file
-                  %input.form-control(type="file")
+                = f.file_field :large_cover, class: "form-control"  
             .form-group
-              %label.control-label.col-sm-3 Small Cover
+              %label.control-label.col-sm-3
               .col-sm-6
-                %col.btn.btn-file
-                  %input.form-control(type="file")
-
+                = f.file_field :small_cover, class: "form-control"
           %fieldset.actions.form-group
             .col-sm-6.col-md-offset-3
-              %input(type="submit" value="Add Video" class="btn btn-default")
+              = f.submit "Add video", class: "btn btn-default"
