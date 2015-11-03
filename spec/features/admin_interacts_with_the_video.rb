@@ -7,6 +7,10 @@ feature "Admin interacts with the video" do
 
     admin_logs_in(admin)
     add_video(category)
+
+    sign_out
+    sign_in # as normal user
+
     video_should_have_been_added
   end
 
@@ -31,7 +35,7 @@ feature "Admin interacts with the video" do
   def video_should_have_been_added
     visit videos_path
     find(:xpath, "//html/body/section/article/div[1]/div[1]/a").click
-    expect(page).to have_content "Monk"
-    expect(page).to have_xpath "//html/body/section/article/div/div/div[2]/div/a[1]"
+    expect(page).to have_selector("img[src='/uploads/monk_large.jpg']")
+    expect(page).to have_selector("a[href='https://s3-eu-west-1.amazonaws.com/myflix112015/video.mp4']")
   end
 end
