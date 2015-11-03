@@ -20,10 +20,6 @@ CarrierWave.configure do |config|
       region:            ENV['AWS_REGION'] # Required
     }
 
-    # Optional: Signing of download urls, e.g. for serving private
-    # content through CloudFront.
-    config.aws_signer = -> (unsigned_url, options) { Aws::CF::Signer.sign_url unsigned_url, options }
-
   else
     config.storage = :file
     config.enable_processing = Rails.env.development?
