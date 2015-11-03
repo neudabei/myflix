@@ -27,7 +27,7 @@ Video.create!(title: "Southpark", description: "Cartman and friends.", large_cov
 Video.create!(title: "Ray Donovan", description: "fixes problems of the rich and famous in Hollywood", small_cover: "/seed/ray_donovan_small.jpg", large_cover: "/seed/ray_donovan.jpg", category_id: 1)
 Video.create!(title: "Better Call Saul", description: "The life of the lawyer from Breaking Bad, before meeting Walter White", small_cover: "/seed/better_call_saul_small.jpg", large_cover: "/seed/better_call_saul.jpg", category_id: 1)
 
-admin = User.create(full_name: "Admin Dude", password: "hello", email: "admin@domain.com", ademin: true)
+admin = User.create(full_name: "Admin Dude", password: "hello", email: "admin@domain.com", admin: true)
 bob = User.create(full_name: "Bob Meister", password: "hello", email: "email@domain.com")
 john = User.create(full_name: "John Doe", password: "hello", email: "john@domain.com")
 
