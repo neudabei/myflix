@@ -13,6 +13,8 @@ Myflix::Application.routes.draw do
     resources :videos, only: [:new, :create]
   end
 
+  resources :payments, only: [:create]
+
   resources :users, only: [:show, :create]
   get 'people', to: 'relationships#index'
   resources :relationships, only: [:create, :destroy]
