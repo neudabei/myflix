@@ -18,16 +18,12 @@
     .col-sm-10.col-sm-offset-1
       = bootstrap_form_for [@video, Review.new] do |f|
         %fieldset
-          .form-group
-            %label Rate this video
-            .row
-              .col-sm-3
-                = f.select :rating, rate_video, class: "form-control"
-          .form-group
-            %label Write Review
-            .row
-              .col-sm-8
-                = f.text_area :content, rows: 6, class: "form-control"
+          .row
+            .col-sm-3
+              = f.select :rating, rate_video, label: "Rate this video", class: "form-control"
+          .row
+            .col-sm-8
+              = f.text_area :content, rows: 6, label: "Write Review", class: "form-control"
         %fieldset.form-group.actions.clearfix
           = f.submit "Submit"
           = link_to "Cancel", @video
