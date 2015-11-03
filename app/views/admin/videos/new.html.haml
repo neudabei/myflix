@@ -30,6 +30,10 @@
               %label.control-label.col-sm-3
               .col-sm-6
                 = f.file_field :small_cover, class: "form-control"
+            .form-group
+              %label.control-label.col-sm-3
+              .col-sm-6
+                = f.text_field :video_url, class: "form-control"
           %fieldset.actions.form-group
             .col-sm-6.col-md-offset-3
               = f.submit "Add video", class: "btn btn-default"

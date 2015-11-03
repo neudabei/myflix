@@ -253,7 +253,6 @@ DEPENDENCIES
   bootstrap_form
   capybara
   capybara-email
-  carrierwave
   carrierwave-aws
   coffee-rails
   database_cleaner (= 1.2.0)
