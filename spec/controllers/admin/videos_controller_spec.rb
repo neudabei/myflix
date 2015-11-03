@@ -63,6 +63,7 @@ describe Admin::VideosController do
         post :create, video: {category_id: category.id, description: "good show!"}
         expect(category.videos.count).to eq(0)
       end
+      
       it "renders the :new template" do
         set_current_admin
         category = Fabricate(:category)

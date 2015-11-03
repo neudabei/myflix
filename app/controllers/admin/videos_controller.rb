@@ -1,6 +1,6 @@
 class Admin::VideosController < ApplicationController
-  before_filter :require_user
-  before_filter :require_admin
+  before_action :require_user
+  before_action :require_admin
 
   def new
     @video = Video.new
@@ -12,7 +12,7 @@ class Admin::VideosController < ApplicationController
       flash[:success] = "You have successfully added the video #{@video.title}"
       redirect_to new_admin_video_path
     else 
-      flash[:error] = "The video could not be added. Please check the errors below."
+      flash.now[:error] = "The video could not be added. Please check the errors below."
       render :new
     end
   end

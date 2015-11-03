@@ -32,7 +32,6 @@ describe VideosController do
         get :show, id: video.id
         expect(response).to redirect_to login_path
       end
-
     end
   end
 
@@ -50,6 +49,5 @@ describe VideosController do
       get :search, search_term: 'rama'
       expect(response).to redirect_to login_path
     end
-
   end
 end
