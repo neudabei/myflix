@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def create    
+  def create 
     @user = User.new(user_params)
     if @user.save
       handle_invitation
@@ -50,12 +50,18 @@ class UsersController < ApplicationController
   end
 
   def handle_payment_with_stripe
-    Stripe.api_key = ENV["STRIPE_SECRET_KEY"]
-    Stripe::Charge.create(
-      :amount => 999,
-      :currency => "gbp",
-      :source => params[:stripeToken], # obtained with Stripe.js
-      :description => "Sign up charge for #{@user.email}"
+    # Stripe.api_key = ENV["STRIPE_SECRET_KEY"]
+    # Stripe::Charge.create(
+    #   :amount => 999,
+    #   :currency => "gbp",
+    #   :source => params[:stripeToken], # obtained with Stripe.js
+    #   :description => "Sign up charge for #{@user.email}"
+    #   )
+    token = params[:stripeToken]
+    charge = StripeWrapper::Charge.create(
+      amount: 999, 
+      source: token, 
+      description: "Sign up charge for #{@user.email}"
       )
   end
 end
