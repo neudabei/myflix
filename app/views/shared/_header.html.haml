@@ -3,7 +3,7 @@
     - if Rails.env.staging?
       = link_to "MyFLiX (STAGING)", root_path
     - elsif Rails.env.development?
-      = link_to "MyFlix (DEVELOPMENT)"  
+      = link_to "MyFlix (DEVELOPMENT)", root_path
     - else
       = link_to "MyFLiX", root_path
   - if logged_in?
