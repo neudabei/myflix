@@ -5,7 +5,7 @@ http_interactions:
     uri: https://api.stripe.com/v1/tokens
     body:
       encoding: US-ASCII
-      string: card[cvc]=314&card[exp_month]=11&card[exp_year]=2016&card[number]=4242424242424242
+      string: card[cvc]=314&card[exp_month]=11&card[exp_year]=2019&card[number]=4242424242424242
     headers:
       Accept:
       - "*/*; q=0.5, application/xml"
@@ -31,7 +31,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Fri, 06 Nov 2015 11:46:37 GMT
+      - Mon, 09 Nov 2015 15:49:54 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -49,7 +49,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_7IkAyDA99KDk8Q
+      - req_7Jvl3DAdrQY89l
       Stripe-Version:
       - '2015-10-16'
       Strict-Transport-Security:
@@ -58,10 +58,10 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "tok_1748fx2nDnAL4MMh1gM2UTtT",
+          "id": "tok_175Hu22nDnAL4MMhOIl8ZB43",
           "object": "token",
           "card": {
-            "id": "card_1748fx2nDnAL4MMhIQVlWcQy",
+            "id": "card_175Hu22nDnAL4MMhGX6gaUbr",
             "object": "card",
             "address_city": null,
             "address_country": null,
@@ -76,7 +76,7 @@ http_interactions:
             "cvc_check": "unchecked",
             "dynamic_last4": null,
             "exp_month": 11,
-            "exp_year": 2016,
+            "exp_year": 2019,
             "fingerprint": "Af7aX4eCVf67Ne5O",
             "funding": "credit",
             "last4": "4242",
@@ -85,19 +85,19 @@ http_interactions:
             "tokenization_method": null
           },
           "client_ip": "2.28.164.246",
-          "created": 1446810397,
+          "created": 1447084194,
           "livemode": false,
           "type": "card",
           "used": false
         }
     http_version: 
-  recorded_at: Fri, 06 Nov 2015 11:46:38 GMT
+  recorded_at: Mon, 09 Nov 2015 15:49:55 GMT
 - request:
     method: post
     uri: https://api.stripe.com/v1/charges
     body:
       encoding: US-ASCII
-      string: amount=999&currency=usd&description=a+valid+charge&source=tok_1748fx2nDnAL4MMh1gM2UTtT
+      string: amount=999&currency=usd&description=a+valid+charge&source=tok_175Hu22nDnAL4MMhOIl8ZB43
     headers:
       Accept:
       - "*/*; q=0.5, application/xml"
@@ -123,7 +123,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Fri, 06 Nov 2015 11:46:38 GMT
+      - Mon, 09 Nov 2015 15:49:58 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -141,7 +141,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_7IkAQkspSebnmJ
+      - req_7JvlDoYm4QFV6R
       Stripe-Version:
       - '2015-10-16'
       Strict-Transport-Security:
@@ -150,14 +150,14 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "ch_1748fy2nDnAL4MMhvIH6MnTb",
+          "id": "ch_175Hu52nDnAL4MMhHu1gmsdG",
           "object": "charge",
           "amount": 999,
           "amount_refunded": 0,
           "application_fee": null,
-          "balance_transaction": "txn_1748fy2nDnAL4MMhCaOHMyIc",
+          "balance_transaction": "txn_175Hu62nDnAL4MMhSELukAOO",
           "captured": true,
-          "created": 1446810398,
+          "created": 1447084197,
           "currency": "usd",
           "customer": null,
           "description": "a valid charge",
@@ -178,11 +178,11 @@ http_interactions:
             "data": [],
             "has_more": false,
             "total_count": 0,
-            "url": "/v1/charges/ch_1748fy2nDnAL4MMhvIH6MnTb/refunds"
+            "url": "/v1/charges/ch_175Hu52nDnAL4MMhHu1gmsdG/refunds"
           },
           "shipping": null,
           "source": {
-            "id": "card_1748fx2nDnAL4MMhIQVlWcQy",
+            "id": "card_175Hu22nDnAL4MMhGX6gaUbr",
             "object": "card",
             "address_city": null,
             "address_country": null,
@@ -198,7 +198,7 @@ http_interactions:
             "cvc_check": "pass",
             "dynamic_last4": null,
             "exp_month": 11,
-            "exp_year": 2016,
+            "exp_year": 2019,
             "fingerprint": "Af7aX4eCVf67Ne5O",
             "funding": "credit",
             "last4": "4242",
@@ -210,5 +210,5 @@ http_interactions:
           "status": "succeeded"
         }
     http_version: 
-  recorded_at: Fri, 06 Nov 2015 11:46:39 GMT
+  recorded_at: Mon, 09 Nov 2015 15:49:58 GMT
 recorded_with: VCR 3.0.0

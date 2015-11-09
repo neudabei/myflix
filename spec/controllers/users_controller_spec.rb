@@ -14,14 +14,19 @@ describe UsersController do
       let(:charge) { double(:charge, successful?: true) }
       before do
         StripeWrapper::Charge.should_receive(:create).and_return(charge)
-        post :create, user: Fabricate.attributes_for(:user)
       end
 
       it "creates the user" do
-        expect(User.count).to eq(1)
+        alice = Fabricate(:user)
+        invitation = Fabricate(:invitation, inviter: alice, recipient_email: "joe@example.com")
+        post :create, user: {email: "joe@example.com", password: "password", full_name: "Joe Doe"}, invitation_token: invitation.token 
+        expect(User.count).to eq(2)
       end
 
       it "redirects to the sign in page" do
+        alice = Fabricate(:user)
+        invitation = Fabricate(:invitation, inviter: alice, recipient_email: "joe@example.com")
+        post :create, user: {email: "joe@example.com", password: "password", full_name: "Joe Doe"}, invitation_token: invitation.token 
         expect(response).to redirect_to login_path
       end
 

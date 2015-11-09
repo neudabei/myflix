@@ -5,7 +5,7 @@ http_interactions:
     uri: https://api.stripe.com/v1/charges
     body:
       encoding: US-ASCII
-      string: amount=999&currency=usd&description=Sign+up+charge+for+harry%40example.com&source=tok_175Hue2nDnAL4MMhxYhCOTTq
+      string: amount=999&currency=usd&description=Sign+up+charge+for+john%40example.com&source=tok_175Hr92nDnAL4MMheBKEmYEk
     headers:
       Accept:
       - "*/*; q=0.5, application/xml"
@@ -22,7 +22,7 @@ http_interactions:
         rsj.default 14.5.0 Darwin Kernel Version 14.5.0: Tue Sep  1 21:23:09 PDT 2015;
         root:xnu-2782.50.1~1/RELEASE_X86_64 x86_64","hostname":"rsj.default"}'
       Content-Length:
-      - '110'
+      - '109'
   response:
     status:
       code: 200
@@ -31,11 +31,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Mon, 09 Nov 2015 15:50:34 GMT
+      - Mon, 09 Nov 2015 15:46:56 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '1457'
+      - '1456'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -49,7 +49,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_7Jvm0hhcdTEFSx
+      - req_7JviKRekSus9oH
       Stripe-Version:
       - '2015-10-16'
       Strict-Transport-Security:
@@ -58,17 +58,17 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "ch_175Huf2nDnAL4MMh2hyPuEce",
+          "id": "ch_175HrA2nDnAL4MMhkrEKZtmS",
           "object": "charge",
           "amount": 999,
           "amount_refunded": 0,
           "application_fee": null,
-          "balance_transaction": "txn_175Huf2nDnAL4MMhMLWdLzaG",
+          "balance_transaction": "txn_175HrA2nDnAL4MMhhBdFio5J",
           "captured": true,
-          "created": 1447084233,
+          "created": 1447084016,
           "currency": "usd",
           "customer": null,
-          "description": "Sign up charge for harry@example.com",
+          "description": "Sign up charge for john@example.com",
           "destination": null,
           "dispute": null,
           "failure_code": null,
@@ -86,11 +86,11 @@ http_interactions:
             "data": [],
             "has_more": false,
             "total_count": 0,
-            "url": "/v1/charges/ch_175Huf2nDnAL4MMh2hyPuEce/refunds"
+            "url": "/v1/charges/ch_175HrA2nDnAL4MMhkrEKZtmS/refunds"
           },
           "shipping": null,
           "source": {
-            "id": "card_175Hue2nDnAL4MMhrIrtQmd9",
+            "id": "card_175Hr92nDnAL4MMhkV5Ud8SJ",
             "object": "card",
             "address_city": null,
             "address_country": null,
@@ -118,5 +118,5 @@ http_interactions:
           "status": "succeeded"
         }
     http_version: 
-  recorded_at: Mon, 09 Nov 2015 15:50:34 GMT
+  recorded_at: Mon, 09 Nov 2015 15:46:56 GMT
 recorded_with: VCR 3.0.0
