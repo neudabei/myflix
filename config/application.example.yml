@@ -1,21 +1,21 @@
-mandrill_api_key: "api_key"
-mandrill_username: "username"
-sentry_dsn: "api_key"
+mandrill_api_key: "mandrill_api_key"
+mandrill_username: "mandrill_username"
+sentry_dsn: "sentry_api_key"
 
 
-S3_BUCKET_NAME: "bucket_name"
-AWS_ACCESS_KEY_ID: "AJSDLKJASLKDJAUASD"
-AWS_SECRET_ACCESS_KEY: "asjdllaDSADJLASJASDSALDJALSDJLlkasjdlksad123123123"
-AWS_REGION: "eu-west-1"
+S3_BUCKET_NAME: "your s3_bucket_name"
+AWS_ACCESS_KEY_ID: "your aws_access_key_id"
+AWS_SECRET_ACCESS_KEY: "your aws_secret_access_key"
+AWS_REGION: "your aws region, e.g. eu-west-1"
 
 development:
-  STRIPE_SECRET_KEY: "asjdllaDSADJLASJ(ASDSALDJALSDJLlkasjdlksad123123123"
-  STRIPE_PUBLISHABLE_KEY: "asjdllaDSADJLASJASDSALDJALSDJLlkasjdlksad123123123"
+  STRIPE_SECRET_KEY: "your stripe secret key"
+  STRIPE_PUBLISHABLE_KEY: "your stripe publishable key"
 
 test:
-  STRIPE_SECRET_KEY: "asjdllaDSADJLASJ(ASDSALDJALSDJLlkasjdlksad123123123"
-  STRIPE_PUBLISHABLE_KEY: "asjdllaDSADJLASJASDSALDJALSDJLlkasjdlksad123123123"
+  STRIPE_SECRET_KEY: "your stripe secret key"
+  STRIPE_PUBLISHABLE_KEY: "your stripe publishable key"
 
 production: 
-  STRIPE_SECRET_KEY: "asjdllaDSADJLASJ(ASDSALDJALSDJLlkasjdlksad123123123"
-  STRIPE_PUBLISHABLE_KEY: "asjdllaDSADJLASJASDSALDJALSDJLlkasjdlksad123123123"
+  STRIPE_SECRET_KEY: "your stripe secret key"
+  STRIPE_PUBLISHABLE_KEY: "your stripe publishable key"
