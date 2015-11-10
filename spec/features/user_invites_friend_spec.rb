@@ -29,7 +29,6 @@ feature "User invites friend" do
   def friend_accepts_invitation
     open_email "harry@example.com"
     current_email.click_link "Accept this invitation"
-
     fill_in "Password", with: "my_password"
     fill_in "Full Name", with: "Harry Doe"
     fill_in "Credit Card Number", with: "4242424242424242"
@@ -40,8 +39,8 @@ feature "User invites friend" do
   end
 
   def friend_signs_in
-    fill_in "Email Address", with: "harry@example.com"
-    fill_in "Password", with: "my_password"
+    fill_in "email", with: "harry@example.com"
+    fill_in "password", with: "my_password"
     click_button "Sign in"
   end
 

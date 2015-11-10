@@ -5,7 +5,7 @@ http_interactions:
     uri: https://api.stripe.com/v1/charges
     body:
       encoding: US-ASCII
-      string: amount=999&currency=usd&description=Sign+up+charge+for+john%40example.com&source=tok_175Hr92nDnAL4MMheBKEmYEk
+      string: amount=999&currency=usd&description=Sign+up+charge+for+john%40example.com&source=tok_175eoi2nDnAL4MMh89apBUZA
     headers:
       Accept:
       - "*/*; q=0.5, application/xml"
@@ -31,7 +31,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Mon, 09 Nov 2015 15:46:56 GMT
+      - Tue, 10 Nov 2015 16:17:58 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -49,7 +49,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_7JviKRekSus9oH
+      - req_7KJRhTP29ha95h
       Stripe-Version:
       - '2015-10-16'
       Strict-Transport-Security:
@@ -58,14 +58,14 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "ch_175HrA2nDnAL4MMhkrEKZtmS",
+          "id": "ch_175eoj2nDnAL4MMh7XrK1Eog",
           "object": "charge",
           "amount": 999,
           "amount_refunded": 0,
           "application_fee": null,
-          "balance_transaction": "txn_175HrA2nDnAL4MMhhBdFio5J",
+          "balance_transaction": "txn_175eoj2nDnAL4MMhgl1a2g8b",
           "captured": true,
-          "created": 1447084016,
+          "created": 1447172277,
           "currency": "usd",
           "customer": null,
           "description": "Sign up charge for john@example.com",
@@ -86,11 +86,11 @@ http_interactions:
             "data": [],
             "has_more": false,
             "total_count": 0,
-            "url": "/v1/charges/ch_175HrA2nDnAL4MMhkrEKZtmS/refunds"
+            "url": "/v1/charges/ch_175eoj2nDnAL4MMh7XrK1Eog/refunds"
           },
           "shipping": null,
           "source": {
-            "id": "card_175Hr92nDnAL4MMhkV5Ud8SJ",
+            "id": "card_175eoi2nDnAL4MMhUw26oyhw",
             "object": "card",
             "address_city": null,
             "address_country": null,
@@ -118,5 +118,5 @@ http_interactions:
           "status": "succeeded"
         }
     http_version: 
-  recorded_at: Mon, 09 Nov 2015 15:46:56 GMT
+  recorded_at: Tue, 10 Nov 2015 16:17:58 GMT
 recorded_with: VCR 3.0.0
