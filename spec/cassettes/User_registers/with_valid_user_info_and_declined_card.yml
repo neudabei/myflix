@@ -5,7 +5,7 @@ http_interactions:
     uri: https://api.stripe.com/v1/charges
     body:
       encoding: US-ASCII
-      string: amount=999&currency=usd&description=Sign+up+charge+for+john%40example.com&source=tok_175wLH2nDnAL4MMhdFySwg7D
+      string: amount=999&currency=usd&description=Sign+up+charge+for+john%40example.com&source=tok_1763xJ2nDnAL4MMhVqh8HdSY
     headers:
       Accept:
       - "*/*; q=0.5, application/xml"
@@ -19,8 +19,8 @@ http_interactions:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
       - '{"bindings_version":"1.31.0","lang":"ruby","lang_version":"2.1.7 p400 (2015-08-18)","platform":"x86_64-darwin14.0","engine":"ruby","publisher":"stripe","uname":"Darwin
-        rsj.local 14.5.0 Darwin Kernel Version 14.5.0: Tue Sep  1 21:23:09 PDT 2015;
-        root:xnu-2782.50.1~1/RELEASE_X86_64 x86_64","hostname":"rsj.local"}'
+        rsj.default 14.5.0 Darwin Kernel Version 14.5.0: Tue Sep  1 21:23:09 PDT 2015;
+        root:xnu-2782.50.1~1/RELEASE_X86_64 x86_64","hostname":"rsj.default"}'
       Content-Length:
       - '109'
   response:
@@ -31,7 +31,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 11 Nov 2015 11:00:44 GMT
+      - Wed, 11 Nov 2015 19:08:31 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -49,7 +49,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_7KbYv23K9ZxtPL
+      - req_7KjQLXqgHxV4cz
       Stripe-Version:
       - '2015-10-16'
     body:
@@ -60,9 +60,9 @@ http_interactions:
             "message": "Your card was declined.",
             "type": "card_error",
             "code": "card_declined",
-            "charge": "ch_175wLI2nDnAL4MMh7xHcgSy1"
+            "charge": "ch_1763xK2nDnAL4MMh70xWiERQ"
           }
         }
     http_version: 
-  recorded_at: Wed, 11 Nov 2015 11:00:45 GMT
+  recorded_at: Wed, 11 Nov 2015 19:08:31 GMT
 recorded_with: VCR 3.0.0
