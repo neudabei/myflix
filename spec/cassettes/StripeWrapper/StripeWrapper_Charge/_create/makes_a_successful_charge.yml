@@ -19,8 +19,8 @@ http_interactions:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
       - '{"bindings_version":"1.31.0","lang":"ruby","lang_version":"2.1.7 p400 (2015-08-18)","platform":"x86_64-darwin14.0","engine":"ruby","publisher":"stripe","uname":"Darwin
-        rsj.default 14.5.0 Darwin Kernel Version 14.5.0: Tue Sep  1 21:23:09 PDT 2015;
-        root:xnu-2782.50.1~1/RELEASE_X86_64 x86_64","hostname":"rsj.default"}'
+        rsj.local 14.5.0 Darwin Kernel Version 14.5.0: Tue Sep  1 21:23:09 PDT 2015;
+        root:xnu-2782.50.1~1/RELEASE_X86_64 x86_64","hostname":"rsj.local"}'
       Content-Length:
       - '82'
   response:
@@ -31,11 +31,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Mon, 09 Nov 2015 15:49:54 GMT
+      - Wed, 11 Nov 2015 11:00:19 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '780'
+      - '781'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -49,7 +49,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_7Jvl3DAdrQY89l
+      - req_7KbXRnyzfrGYnS
       Stripe-Version:
       - '2015-10-16'
       Strict-Transport-Security:
@@ -58,10 +58,10 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "tok_175Hu22nDnAL4MMhOIl8ZB43",
+          "id": "tok_175wKt2nDnAL4MMhetYyMRNk",
           "object": "token",
           "card": {
-            "id": "card_175Hu22nDnAL4MMhGX6gaUbr",
+            "id": "card_175wKt2nDnAL4MMhIrfrjCsD",
             "object": "card",
             "address_city": null,
             "address_country": null,
@@ -84,20 +84,20 @@ http_interactions:
             "name": null,
             "tokenization_method": null
           },
-          "client_ip": "2.28.164.246",
-          "created": 1447084194,
+          "client_ip": "83.218.154.42",
+          "created": 1447239619,
           "livemode": false,
           "type": "card",
           "used": false
         }
     http_version: 
-  recorded_at: Mon, 09 Nov 2015 15:49:55 GMT
+  recorded_at: Wed, 11 Nov 2015 11:00:20 GMT
 - request:
     method: post
     uri: https://api.stripe.com/v1/charges
     body:
       encoding: US-ASCII
-      string: amount=999&currency=usd&description=a+valid+charge&source=tok_175Hu22nDnAL4MMhOIl8ZB43
+      string: amount=999&currency=usd&description=a+valid+charge&source=tok_175wKt2nDnAL4MMhetYyMRNk
     headers:
       Accept:
       - "*/*; q=0.5, application/xml"
@@ -111,8 +111,8 @@ http_interactions:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
       - '{"bindings_version":"1.31.0","lang":"ruby","lang_version":"2.1.7 p400 (2015-08-18)","platform":"x86_64-darwin14.0","engine":"ruby","publisher":"stripe","uname":"Darwin
-        rsj.default 14.5.0 Darwin Kernel Version 14.5.0: Tue Sep  1 21:23:09 PDT 2015;
-        root:xnu-2782.50.1~1/RELEASE_X86_64 x86_64","hostname":"rsj.default"}'
+        rsj.local 14.5.0 Darwin Kernel Version 14.5.0: Tue Sep  1 21:23:09 PDT 2015;
+        root:xnu-2782.50.1~1/RELEASE_X86_64 x86_64","hostname":"rsj.local"}'
       Content-Length:
       - '86'
   response:
@@ -123,7 +123,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Mon, 09 Nov 2015 15:49:58 GMT
+      - Wed, 11 Nov 2015 11:00:20 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -141,7 +141,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_7JvlDoYm4QFV6R
+      - req_7KbYv1tz5udRWj
       Stripe-Version:
       - '2015-10-16'
       Strict-Transport-Security:
@@ -150,14 +150,14 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "ch_175Hu52nDnAL4MMhHu1gmsdG",
+          "id": "ch_175wKu2nDnAL4MMhykLzZPs4",
           "object": "charge",
           "amount": 999,
           "amount_refunded": 0,
           "application_fee": null,
-          "balance_transaction": "txn_175Hu62nDnAL4MMhSELukAOO",
+          "balance_transaction": "txn_175wKu2nDnAL4MMhMJpe6AQY",
           "captured": true,
-          "created": 1447084197,
+          "created": 1447239620,
           "currency": "usd",
           "customer": null,
           "description": "a valid charge",
@@ -178,11 +178,11 @@ http_interactions:
             "data": [],
             "has_more": false,
             "total_count": 0,
-            "url": "/v1/charges/ch_175Hu52nDnAL4MMhHu1gmsdG/refunds"
+            "url": "/v1/charges/ch_175wKu2nDnAL4MMhykLzZPs4/refunds"
           },
           "shipping": null,
           "source": {
-            "id": "card_175Hu22nDnAL4MMhGX6gaUbr",
+            "id": "card_175wKt2nDnAL4MMhIrfrjCsD",
             "object": "card",
             "address_city": null,
             "address_country": null,
@@ -210,5 +210,5 @@ http_interactions:
           "status": "succeeded"
         }
     http_version: 
-  recorded_at: Mon, 09 Nov 2015 15:49:58 GMT
+  recorded_at: Wed, 11 Nov 2015 11:00:21 GMT
 recorded_with: VCR 3.0.0

@@ -5,7 +5,7 @@ http_interactions:
     uri: https://api.stripe.com/v1/charges
     body:
       encoding: US-ASCII
-      string: amount=999&currency=usd&description=Sign+up+charge+for+harry%40example.com&source=tok_175emS2nDnAL4MMhuLDyi6jJ
+      string: amount=999&currency=usd&description=Sign+up+charge+for+harry%40example.com&source=tok_175wL62nDnAL4MMhJYgMaSPN
     headers:
       Accept:
       - "*/*; q=0.5, application/xml"
@@ -19,8 +19,8 @@ http_interactions:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
       - '{"bindings_version":"1.31.0","lang":"ruby","lang_version":"2.1.7 p400 (2015-08-18)","platform":"x86_64-darwin14.0","engine":"ruby","publisher":"stripe","uname":"Darwin
-        rsj.default 14.5.0 Darwin Kernel Version 14.5.0: Tue Sep  1 21:23:09 PDT 2015;
-        root:xnu-2782.50.1~1/RELEASE_X86_64 x86_64","hostname":"rsj.default"}'
+        rsj.local 14.5.0 Darwin Kernel Version 14.5.0: Tue Sep  1 21:23:09 PDT 2015;
+        root:xnu-2782.50.1~1/RELEASE_X86_64 x86_64","hostname":"rsj.local"}'
       Content-Length:
       - '110'
   response:
@@ -31,7 +31,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Tue, 10 Nov 2015 16:15:38 GMT
+      - Wed, 11 Nov 2015 11:00:34 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -49,7 +49,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_7KJP7zgB4r7P0i
+      - req_7KbYjSlT4zSCue
       Stripe-Version:
       - '2015-10-16'
       Strict-Transport-Security:
@@ -58,14 +58,14 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "ch_175emU2nDnAL4MMhBsYKxCqM",
+          "id": "ch_175wL72nDnAL4MMhRnqY5PMB",
           "object": "charge",
           "amount": 999,
           "amount_refunded": 0,
           "application_fee": null,
-          "balance_transaction": "txn_175emU2nDnAL4MMhotpnlUWX",
+          "balance_transaction": "txn_175wL72nDnAL4MMho8oEYbaQ",
           "captured": true,
-          "created": 1447172138,
+          "created": 1447239633,
           "currency": "usd",
           "customer": null,
           "description": "Sign up charge for harry@example.com",
@@ -86,11 +86,11 @@ http_interactions:
             "data": [],
             "has_more": false,
             "total_count": 0,
-            "url": "/v1/charges/ch_175emU2nDnAL4MMhBsYKxCqM/refunds"
+            "url": "/v1/charges/ch_175wL72nDnAL4MMhRnqY5PMB/refunds"
           },
           "shipping": null,
           "source": {
-            "id": "card_175emS2nDnAL4MMh8GgbaZWJ",
+            "id": "card_175wL62nDnAL4MMhltLT386R",
             "object": "card",
             "address_city": null,
             "address_country": null,
@@ -118,5 +118,5 @@ http_interactions:
           "status": "succeeded"
         }
     http_version: 
-  recorded_at: Tue, 10 Nov 2015 16:15:38 GMT
+  recorded_at: Wed, 11 Nov 2015 11:00:34 GMT
 recorded_with: VCR 3.0.0
