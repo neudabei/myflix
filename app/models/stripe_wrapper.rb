@@ -37,7 +37,7 @@ module StripeWrapper
     def self.create(options = {})
       begin
         response = Stripe::Customer.create(
-          card: options[:card],
+          source: options[:source],
           email: options[:user].email,
           plan: "base"
           )

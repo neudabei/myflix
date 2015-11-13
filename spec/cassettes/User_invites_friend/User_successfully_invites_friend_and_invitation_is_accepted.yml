@@ -5,7 +5,7 @@ http_interactions:
     uri: https://api.stripe.com/v1/customers
     body:
       encoding: US-ASCII
-      string: email=harry%40example.com&plan=base
+      string: email=harry%40example.com&plan=base&source=tok_176fvv2nDnAL4MMhHPYqpI7U
     headers:
       Accept:
       - "*/*; q=0.5, application/xml"
@@ -22,20 +22,20 @@ http_interactions:
         rsj.default 14.5.0 Darwin Kernel Version 14.5.0: Tue Sep  1 21:23:09 PDT 2015;
         root:xnu-2782.50.1~1/RELEASE_X86_64 x86_64","hostname":"rsj.default"}'
       Content-Length:
-      - '35'
+      - '71'
   response:
     status:
-      code: 400
-      message: Bad Request
+      code: 200
+      message: OK
     headers:
       Server:
       - nginx
       Date:
-      - Fri, 13 Nov 2015 11:22:30 GMT
+      - Fri, 13 Nov 2015 11:41:37 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '120'
+      - '2362'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -49,18 +49,103 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_7LMMbEsJQQFzOS
+      - req_7LMf928BrT4kRk
       Stripe-Version:
       - '2015-10-16'
+      Strict-Transport-Security:
+      - max-age=31556926; includeSubDomains
     body:
       encoding: UTF-8
       string: |
         {
-          "error": {
-            "type": "invalid_request_error",
-            "message": "This customer has no attached payment source"
+          "id": "cus_7LMfg2e9UJD1a8",
+          "object": "customer",
+          "account_balance": 0,
+          "created": 1447414896,
+          "currency": "gbp",
+          "default_source": "card_176fvv2nDnAL4MMhD2JTsLw5",
+          "delinquent": false,
+          "description": null,
+          "discount": null,
+          "email": "harry@example.com",
+          "livemode": false,
+          "metadata": {},
+          "shipping": null,
+          "sources": {
+            "object": "list",
+            "data": [
+              {
+                "id": "card_176fvv2nDnAL4MMhD2JTsLw5",
+                "object": "card",
+                "address_city": null,
+                "address_country": null,
+                "address_line1": null,
+                "address_line1_check": null,
+                "address_line2": null,
+                "address_state": null,
+                "address_zip": null,
+                "address_zip_check": null,
+                "brand": "Visa",
+                "country": "US",
+                "customer": "cus_7LMfg2e9UJD1a8",
+                "cvc_check": "pass",
+                "dynamic_last4": null,
+                "exp_month": 7,
+                "exp_year": 2018,
+                "fingerprint": "Af7aX4eCVf67Ne5O",
+                "funding": "credit",
+                "last4": "4242",
+                "metadata": {},
+                "name": null,
+                "tokenization_method": null
+              }
+            ],
+            "has_more": false,
+            "total_count": 1,
+            "url": "/v1/customers/cus_7LMfg2e9UJD1a8/sources"
+          },
+          "subscriptions": {
+            "object": "list",
+            "data": [
+              {
+                "id": "sub_7LMffNsZkVMPVp",
+                "object": "subscription",
+                "application_fee_percent": null,
+                "cancel_at_period_end": false,
+                "canceled_at": null,
+                "current_period_end": 1450006896,
+                "current_period_start": 1447414896,
+                "customer": "cus_7LMfg2e9UJD1a8",
+                "discount": null,
+                "ended_at": null,
+                "metadata": {},
+                "plan": {
+                  "id": "base",
+                  "object": "plan",
+                  "amount": 999,
+                  "created": 1447411313,
+                  "currency": "gbp",
+                  "interval": "month",
+                  "interval_count": 1,
+                  "livemode": false,
+                  "metadata": {},
+                  "name": "myflix base plan",
+                  "statement_descriptor": null,
+                  "trial_period_days": null
+                },
+                "quantity": 1,
+                "start": 1447414896,
+                "status": "active",
+                "tax_percent": null,
+                "trial_end": null,
+                "trial_start": null
+              }
+            ],
+            "has_more": false,
+            "total_count": 1,
+            "url": "/v1/customers/cus_7LMfg2e9UJD1a8/subscriptions"
           }
         }
     http_version: 
-  recorded_at: Fri, 13 Nov 2015 11:22:31 GMT
+  recorded_at: Fri, 13 Nov 2015 11:41:37 GMT
 recorded_with: VCR 3.0.0

@@ -31,7 +31,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Fri, 13 Nov 2015 11:23:29 GMT
+      - Fri, 13 Nov 2015 11:42:20 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -49,7 +49,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_7LMNUaNHUECaQh
+      - req_7LMfPIAIfi9uTS
       Stripe-Version:
       - '2015-10-16'
       Strict-Transport-Security:
@@ -58,10 +58,10 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "tok_176feP2nDnAL4MMhxIDUPeQ9",
+          "id": "tok_176fwe2nDnAL4MMhtHdtafXy",
           "object": "token",
           "card": {
-            "id": "card_176feP2nDnAL4MMhecQCsfaZ",
+            "id": "card_176fwe2nDnAL4MMh9cFaPusa",
             "object": "card",
             "address_city": null,
             "address_country": null,
@@ -85,19 +85,19 @@ http_interactions:
             "tokenization_method": null
           },
           "client_ip": "2.28.164.246",
-          "created": 1447413809,
+          "created": 1447414940,
           "livemode": false,
           "type": "card",
           "used": false
         }
     http_version: 
-  recorded_at: Fri, 13 Nov 2015 11:23:29 GMT
+  recorded_at: Fri, 13 Nov 2015 11:42:20 GMT
 - request:
     method: post
     uri: https://api.stripe.com/v1/customers
     body:
       encoding: US-ASCII
-      string: card=tok_176feP2nDnAL4MMhxIDUPeQ9&email=garret%40sauer.org&plan=base
+      string: email=alfonzo%40ferry.net&plan=base&source=tok_176fwe2nDnAL4MMhtHdtafXy
     headers:
       Accept:
       - "*/*; q=0.5, application/xml"
@@ -114,7 +114,7 @@ http_interactions:
         rsj.default 14.5.0 Darwin Kernel Version 14.5.0: Tue Sep  1 21:23:09 PDT 2015;
         root:xnu-2782.50.1~1/RELEASE_X86_64 x86_64","hostname":"rsj.default"}'
       Content-Length:
-      - '68'
+      - '71'
   response:
     status:
       code: 402
@@ -123,7 +123,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Fri, 13 Nov 2015 11:23:30 GMT
+      - Fri, 13 Nov 2015 11:42:21 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -141,7 +141,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_7LMNVI4KcZRSkm
+      - req_7LMgqFCVpTerXN
       Stripe-Version:
       - '2015-10-16'
     body:
@@ -156,5 +156,5 @@ http_interactions:
           }
         }
     http_version: 
-  recorded_at: Fri, 13 Nov 2015 11:23:30 GMT
+  recorded_at: Fri, 13 Nov 2015 11:42:21 GMT
 recorded_with: VCR 3.0.0

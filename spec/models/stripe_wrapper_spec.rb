@@ -23,8 +23,6 @@ describe StripeWrapper do
     ).id
   end
 
-
-
   describe StripeWrapper::Charge do
     describe ".create" do # .method for class methods / #method for instance methods
       it "makes a successful charge", :vcr do
@@ -65,7 +63,7 @@ describe StripeWrapper do
         alice = Fabricate(:user)
         response = StripeWrapper::Customer.create(
           user: alice, 
-          card: valid_token
+          source: valid_token
           )
         expect(response).to be_successful
       end
@@ -74,7 +72,7 @@ describe StripeWrapper do
         alice = Fabricate(:user)
         response = StripeWrapper::Customer.create(
           user: alice, 
-          card: declined_card_token
+          source: declined_card_token
           )
         expect(response).not_to be_successful
       end
@@ -83,7 +81,7 @@ describe StripeWrapper do
         alice = Fabricate(:user)
         response = StripeWrapper::Customer.create(
           user: alice, 
-          card: declined_card_token
+          source: declined_card_token
           )
         expect(response.error_message).to eq("Your card was declined.")
       end
