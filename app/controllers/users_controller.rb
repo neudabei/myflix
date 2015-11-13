@@ -6,13 +6,14 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def create    
+  def create 
     @user = User.new(user_params)
-    if @user.save
-      handle_invitation
-      AppMailer.delay.send_welcome_email(@user)
+    result = UserSignup.new(@user).sign_up(params[:stripeToken], params[:invitation_token])
+    if result.successful?
+      flash[:success] = "Thank you for registering with MyFlix. Please sign in now."
       redirect_to login_path
     else
+      flash.now[:error] = result.error_message
       render :new
     end
   end
@@ -38,14 +39,4 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:email, :password, :full_name)
   end
-
-  def handle_invitation
-    if params[:invitation_token].present?
-      invitation = Invitation.find_by(token: params[:invitation_token])
-      @user.follow(invitation.inviter)
-      invitation.inviter.follow(@user)
-      invitation.update_column(:token, nil)
-    end
-  end
-
 end

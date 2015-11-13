@@ -19,6 +19,7 @@ gem 'unicorn'
 gem 'sentry-raven'
 gem 'carrierwave-aws'
 gem "mini_magick"
+gem 'stripe'
 
 group :development do
   gem 'thin'
@@ -40,6 +41,9 @@ group :test do
   gem 'capybara'
   gem 'capybara-email'
   gem 'launchy'
+  gem 'vcr'
+  gem 'webmock'
+  gem 'selenium-webdriver'
 end
 
 group :production, :staging do
