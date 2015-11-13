@@ -19,8 +19,8 @@ http_interactions:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
       - '{"bindings_version":"1.31.0","lang":"ruby","lang_version":"2.1.7 p400 (2015-08-18)","platform":"x86_64-darwin14.0","engine":"ruby","publisher":"stripe","uname":"Darwin
-        rsj.local 14.5.0 Darwin Kernel Version 14.5.0: Tue Sep  1 21:23:09 PDT 2015;
-        root:xnu-2782.50.1~1/RELEASE_X86_64 x86_64","hostname":"rsj.local"}'
+        rsj.default 14.5.0 Darwin Kernel Version 14.5.0: Tue Sep  1 21:23:09 PDT 2015;
+        root:xnu-2782.50.1~1/RELEASE_X86_64 x86_64","hostname":"rsj.default"}'
       Content-Length:
       - '82'
   response:
@@ -31,11 +31,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 11 Nov 2015 11:00:23 GMT
+      - Fri, 13 Nov 2015 11:23:24 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '781'
+      - '780'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -49,7 +49,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_7KbYaxyXiShDq7
+      - req_7LMN9LnPX7N0ME
       Stripe-Version:
       - '2015-10-16'
       Strict-Transport-Security:
@@ -58,10 +58,10 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "tok_175wKx2nDnAL4MMhLb52uOAx",
+          "id": "tok_176feK2nDnAL4MMhlkdU4HXG",
           "object": "token",
           "card": {
-            "id": "card_175wKx2nDnAL4MMh2F2GIj0O",
+            "id": "card_176feK2nDnAL4MMhYbsuKRTt",
             "object": "card",
             "address_city": null,
             "address_country": null,
@@ -84,20 +84,20 @@ http_interactions:
             "name": null,
             "tokenization_method": null
           },
-          "client_ip": "83.218.154.42",
-          "created": 1447239623,
+          "client_ip": "2.28.164.246",
+          "created": 1447413804,
           "livemode": false,
           "type": "card",
           "used": false
         }
     http_version: 
-  recorded_at: Wed, 11 Nov 2015 11:00:24 GMT
+  recorded_at: Fri, 13 Nov 2015 11:23:24 GMT
 - request:
     method: post
     uri: https://api.stripe.com/v1/charges
     body:
       encoding: US-ASCII
-      string: amount=999&currency=usd&description=a+valid+charge&source=tok_175wKx2nDnAL4MMhLb52uOAx
+      string: amount=999&currency=usd&description=a+valid+charge&source=tok_176feK2nDnAL4MMhlkdU4HXG
     headers:
       Accept:
       - "*/*; q=0.5, application/xml"
@@ -111,8 +111,8 @@ http_interactions:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
       - '{"bindings_version":"1.31.0","lang":"ruby","lang_version":"2.1.7 p400 (2015-08-18)","platform":"x86_64-darwin14.0","engine":"ruby","publisher":"stripe","uname":"Darwin
-        rsj.local 14.5.0 Darwin Kernel Version 14.5.0: Tue Sep  1 21:23:09 PDT 2015;
-        root:xnu-2782.50.1~1/RELEASE_X86_64 x86_64","hostname":"rsj.local"}'
+        rsj.default 14.5.0 Darwin Kernel Version 14.5.0: Tue Sep  1 21:23:09 PDT 2015;
+        root:xnu-2782.50.1~1/RELEASE_X86_64 x86_64","hostname":"rsj.default"}'
       Content-Length:
       - '86'
   response:
@@ -123,7 +123,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 11 Nov 2015 11:00:24 GMT
+      - Fri, 13 Nov 2015 11:23:25 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -141,7 +141,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_7KbYqo7VgbcrXO
+      - req_7LMN9oLtAmwJke
       Stripe-Version:
       - '2015-10-16'
     body:
@@ -152,9 +152,9 @@ http_interactions:
             "message": "Your card was declined.",
             "type": "card_error",
             "code": "card_declined",
-            "charge": "ch_175wKy2nDnAL4MMhxthtYxiC"
+            "charge": "ch_176feL2nDnAL4MMhVw247qJG"
           }
         }
     http_version: 
-  recorded_at: Wed, 11 Nov 2015 11:00:25 GMT
+  recorded_at: Fri, 13 Nov 2015 11:23:26 GMT
 recorded_with: VCR 3.0.0

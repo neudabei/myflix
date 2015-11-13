@@ -31,7 +31,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Fri, 13 Nov 2015 11:23:19 GMT
+      - Fri, 13 Nov 2015 11:23:26 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -49,7 +49,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_7LMMLlLKhFJgrl
+      - req_7LMNd2qo6wzKcf
       Stripe-Version:
       - '2015-10-16'
       Strict-Transport-Security:
@@ -58,10 +58,10 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "tok_176feF2nDnAL4MMhs4ECjiUe",
+          "id": "tok_176feM2nDnAL4MMhl8b3UKjA",
           "object": "token",
           "card": {
-            "id": "card_176feF2nDnAL4MMhaUAJXQ72",
+            "id": "card_176feM2nDnAL4MMhEhcHoXKg",
             "object": "card",
             "address_city": null,
             "address_country": null,
@@ -85,19 +85,19 @@ http_interactions:
             "tokenization_method": null
           },
           "client_ip": "2.28.164.246",
-          "created": 1447413799,
+          "created": 1447413806,
           "livemode": false,
           "type": "card",
           "used": false
         }
     http_version: 
-  recorded_at: Fri, 13 Nov 2015 11:23:20 GMT
+  recorded_at: Fri, 13 Nov 2015 11:23:26 GMT
 - request:
     method: post
-    uri: https://api.stripe.com/v1/charges
+    uri: https://api.stripe.com/v1/customers
     body:
       encoding: US-ASCII
-      string: amount=999&currency=usd&description=a+valid+charge&source=tok_176feF2nDnAL4MMhs4ECjiUe
+      string: card=tok_176feM2nDnAL4MMhl8b3UKjA&email=fiona%40beier.info&plan=base
     headers:
       Accept:
       - "*/*; q=0.5, application/xml"
@@ -114,7 +114,7 @@ http_interactions:
         rsj.default 14.5.0 Darwin Kernel Version 14.5.0: Tue Sep  1 21:23:09 PDT 2015;
         root:xnu-2782.50.1~1/RELEASE_X86_64 x86_64","hostname":"rsj.default"}'
       Content-Length:
-      - '86'
+      - '68'
   response:
     status:
       code: 200
@@ -123,11 +123,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Fri, 13 Nov 2015 11:23:20 GMT
+      - Fri, 13 Nov 2015 11:23:28 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '1436'
+      - '2362'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -141,7 +141,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_7LMN6lUXj5N7Hi
+      - req_7LMNA7JNXJ0aBB
       Stripe-Version:
       - '2015-10-16'
       Strict-Transport-Security:
@@ -150,65 +150,94 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "ch_176feG2nDnAL4MMhV3WTGROd",
-          "object": "charge",
-          "amount": 999,
-          "amount_refunded": 0,
-          "application_fee": null,
-          "balance_transaction": "txn_176feG2nDnAL4MMhJABXOHu3",
-          "captured": true,
-          "created": 1447413800,
-          "currency": "usd",
-          "customer": null,
-          "description": "a valid charge",
-          "destination": null,
-          "dispute": null,
-          "failure_code": null,
-          "failure_message": null,
-          "fraud_details": {},
-          "invoice": null,
+          "id": "cus_7LMNqkkTjT0LkB",
+          "object": "customer",
+          "account_balance": 0,
+          "created": 1447413807,
+          "currency": "gbp",
+          "default_source": "card_176feM2nDnAL4MMhEhcHoXKg",
+          "delinquent": false,
+          "description": null,
+          "discount": null,
+          "email": "fiona@beier.info",
           "livemode": false,
           "metadata": {},
-          "paid": true,
-          "receipt_email": null,
-          "receipt_number": null,
-          "refunded": false,
-          "refunds": {
-            "object": "list",
-            "data": [],
-            "has_more": false,
-            "total_count": 0,
-            "url": "/v1/charges/ch_176feG2nDnAL4MMhV3WTGROd/refunds"
-          },
           "shipping": null,
-          "source": {
-            "id": "card_176feF2nDnAL4MMhaUAJXQ72",
-            "object": "card",
-            "address_city": null,
-            "address_country": null,
-            "address_line1": null,
-            "address_line1_check": null,
-            "address_line2": null,
-            "address_state": null,
-            "address_zip": null,
-            "address_zip_check": null,
-            "brand": "Visa",
-            "country": "US",
-            "customer": null,
-            "cvc_check": "pass",
-            "dynamic_last4": null,
-            "exp_month": 11,
-            "exp_year": 2019,
-            "fingerprint": "Af7aX4eCVf67Ne5O",
-            "funding": "credit",
-            "last4": "4242",
-            "metadata": {},
-            "name": null,
-            "tokenization_method": null
+          "sources": {
+            "object": "list",
+            "data": [
+              {
+                "id": "card_176feM2nDnAL4MMhEhcHoXKg",
+                "object": "card",
+                "address_city": null,
+                "address_country": null,
+                "address_line1": null,
+                "address_line1_check": null,
+                "address_line2": null,
+                "address_state": null,
+                "address_zip": null,
+                "address_zip_check": null,
+                "brand": "Visa",
+                "country": "US",
+                "customer": "cus_7LMNqkkTjT0LkB",
+                "cvc_check": "pass",
+                "dynamic_last4": null,
+                "exp_month": 11,
+                "exp_year": 2019,
+                "fingerprint": "Af7aX4eCVf67Ne5O",
+                "funding": "credit",
+                "last4": "4242",
+                "metadata": {},
+                "name": null,
+                "tokenization_method": null
+              }
+            ],
+            "has_more": false,
+            "total_count": 1,
+            "url": "/v1/customers/cus_7LMNqkkTjT0LkB/sources"
           },
-          "statement_descriptor": null,
-          "status": "succeeded"
+          "subscriptions": {
+            "object": "list",
+            "data": [
+              {
+                "id": "sub_7LMNBQHfSs5AQJ",
+                "object": "subscription",
+                "application_fee_percent": null,
+                "cancel_at_period_end": false,
+                "canceled_at": null,
+                "current_period_end": 1450005807,
+                "current_period_start": 1447413807,
+                "customer": "cus_7LMNqkkTjT0LkB",
+                "discount": null,
+                "ended_at": null,
+                "metadata": {},
+                "plan": {
+                  "id": "base",
+                  "object": "plan",
+                  "amount": 999,
+                  "created": 1447411313,
+                  "currency": "gbp",
+                  "interval": "month",
+                  "interval_count": 1,
+                  "livemode": false,
+                  "metadata": {},
+                  "name": "myflix base plan",
+                  "statement_descriptor": null,
+                  "trial_period_days": null
+                },
+                "quantity": 1,
+                "start": 1447413807,
+                "status": "active",
+                "tax_percent": null,
+                "trial_end": null,
+                "trial_start": null
+              }
+            ],
+            "has_more": false,
+            "total_count": 1,
+            "url": "/v1/customers/cus_7LMNqkkTjT0LkB/subscriptions"
+          }
         }
     http_version: 
-  recorded_at: Fri, 13 Nov 2015 11:23:21 GMT
+  recorded_at: Fri, 13 Nov 2015 11:23:28 GMT
 recorded_with: VCR 3.0.0
