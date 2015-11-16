@@ -1,16 +1,17 @@
 require 'spec_helper'
 
 feature "User signs in" do
-  background do
-    User.create(email: "john@domain.com", password: "password123", full_name: "john doe")
+  scenario "with existing username" do
+    alice = Fabricate(:user)
+    sign_in(alice)
+    page.should have_content "Welcome, you've logged in."
   end
 
-  scenario "with existing username" do
-    visit login_path
-    fill_in "email", with: "john@domain.com" # signing in with john requires him to be in the database, that's why we need the background before
-    fill_in "password", with: "password123"
-    click_button "Sign in"
-    page.should have_content "Welcome, you've logged in."
+  scenario "with deactivated user" do
+    alice = Fabricate(:user, active: false)
+    sign_in(alice)
+    expect(page).not_to have_content(alice.full_name)
+    expect(page).to have_content("Your account has been suspended. Please contact the customer service.")
   end
 end
 
