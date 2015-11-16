@@ -20,6 +20,7 @@ gem 'sentry-raven'
 gem 'carrierwave-aws'
 gem "mini_magick"
 gem 'stripe'
+gem 'stripe_event'
 
 group :development do
   gem 'thin'
