@@ -20,8 +20,21 @@ class Video < ActiveRecord::Base
     # % before and after search_term are wildcard paramaters
   end
 
+  def self.search(query)
+    search_definition = {
+      query: {
+        multi_match: {
+          query: query, 
+          fields: ["title", "description"],
+          operator: "and"
+        }
+      }
+    }
+    __elasticsearch__.search(search_definition)
+  end
+
   def as_indexed_json(options={})
-    as_json(only: [:title])
+    as_json(only: [:title, :description])
   end
 
 end
