@@ -1,4 +1,9 @@
 class Video < ActiveRecord::Base
+  include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
+
+  index_name ["myflix", Rails.env].join("_")
+
   belongs_to :category
   has_many :reviews, -> {order("created_at DESC")}
   has_many :queue_items
@@ -13,6 +18,10 @@ class Video < ActiveRecord::Base
     where("title LIKE ?", "%#{search_term}%").order("created_at DESC")
     # whatever we pass in the part after the comma(,) replaces the question mark(?) and forms the SQL query
     # % before and after search_term are wildcard paramaters
+  end
+
+  def as_indexed_json(options={})
+    as_json(only: [:title])
   end
 
 end

@@ -36,31 +36,45 @@ describe Video do
       back_to_future = Video.create(title: "Back to Future", description: "Time Travel!")
       expect(Video.search_by_title("")).to eq([])
     end
-
   end
   
-  # it "saves itself" do
-  #   video = Video.new(title: "awesome movie", description: "this movie is awesome and worth watching.", small_cover_url: "awesome_poster_small.jpg", large_cover_url: "awesome_poster_large.jpg")
-  #   video.save
-  #   Video.first.title.should == "awesome movie"
-  #   expect(Video.first.description).to eq("this movie is awesome and worth watching.")
-  #   expect(Video.first).to eq(video)
-  # end
+  describe ".search", :elasticsearch do
+    let(:refresh_index) do
+      Video.import
+      Video.__elasticsearch__.refresh_index!
+    end
 
-  # it "belongs to category" do
-  #   dramas = Category.create(name: "dramas")
-  #   monk = Video.create(title: "Monk", description: "Neurotic detective.", category: dramas)
-  #   expect(monk.category).to eq(dramas)
-  # end
+    context "with title" do
+      it "returns no results when there's no match" do
+        Fabricate(:video, title: "Futurama")
+        refresh_index
 
-  # it "does not save a video without a title" do
-  #   video = Video.create(description: "video is about this and that")
-  #   expect(Video.count).to eq(0)
-  # end
+        expect(Video.search("whatever").records.to_a).to eq []
+      end
 
-  # it "does not save a video without a description" do
-  #   video = Video.create(title: "newvideo")
-  #   expect(Video.count).to eq(0)
-  # end
+      it "returns an empty array when there's no search term" do
+        futurama = Fabricate(:video)
+        south_park = Fabricate(:video)
+        refresh_index
 
+        expect(Video.search("").records.to_a).to eq []
+      end
+
+      it "returns an array of 1 video for title case insensitve match" do
+        futurama = Fabricate(:video, title: "Futurama")
+        south_park = Fabricate(:video, title: "South Park")
+        refresh_index
+
+        expect(Video.search("futurama").records.to_a).to eq [futurama]
+      end
+
+      it "returns an array of many videos for title match" do
+        star_trek = Fabricate(:video, title: "Star Trek")
+        star_wars = Fabricate(:video, title: "Star Wars")
+        refresh_index
+
+        expect(Video.search("star").records.to_a).to match_array [star_trek, star_wars]
+      end
+    end
+  end
 end
