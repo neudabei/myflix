@@ -1,6 +1,4 @@
-class RelationshipsController < ApplicationController
-  before_action :require_user
-
+class RelationshipsController < AuthenticatedController
   def index
     @relationships = current_user.following_relationships
   end
@@ -17,5 +15,4 @@ class RelationshipsController < ApplicationController
     #AppMailer.notify_on_someone_following_you(current_user).deliver
     redirect_to people_path
   end
-
 end
