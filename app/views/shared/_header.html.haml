@@ -11,8 +11,8 @@
       %li= link_to "Videos", videos_path
       %li= link_to "My Queue", my_queue_path
       %li= link_to "People", people_path
-      %li= link_to "Advanced Search"
-    = form_tag search_videos_path, class: "col-md-4 navbar-form", method: "get" do
+      %li= link_to "Advanced Search", advanced_search_videos_path
+    = form_tag search_videos_path, class: "col-md-5 navbar-form", method: "get" do
       %input.form-control(name="search_term" type="text" placeholder="Search for videos here")
       %button.btn.btn-default(type="submit") Search
     #user_links.pull-right

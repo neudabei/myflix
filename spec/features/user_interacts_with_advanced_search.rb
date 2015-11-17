@@ -17,7 +17,6 @@ feature "User interacts with advanced search", :elasticsearch do
       fill_in "query", with: "Star Wars"
       click_button "Search"
     end
-
     expect(page).to have_content("2 videos found")
     expect(page).to have_content("Star Wars: Episode 1")
     expect(page).to have_content("Star Wars: Episode 2")
