@@ -20,6 +20,10 @@ class Video < ActiveRecord::Base
     # % before and after search_term are wildcard paramaters
   end
 
+  def average_rating
+    reviews.average(:rating).to_f.round(1) if reviews.any?
+  end
+
   def self.search(query, options={})
     search_definition = {
       query: {
@@ -35,11 +39,23 @@ class Video < ActiveRecord::Base
       search_definition[:query][:multi_match][:fields] << "reviews.content"
     end
 
+    if options[:rating_to].present? || options[:rating_from].present?
+      search_definition[:filter] = {
+        range: {
+          average_rating: {
+            gte: (options[:rating_from] if options[:rating_from].present?),
+            lte: (options[:rating_to] if options[:rating_to].present?)
+          }
+        }
+      }
+    end
+
     __elasticsearch__.search(search_definition)
   end
 
   def as_indexed_json(options={})
     as_json(
+      methods: [:average_rating],
       only: [:title, :description], 
       include: {
         reviews: { only: [:content] }
