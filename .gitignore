@@ -32,3 +32,8 @@ nbproject
 
 # Ignore ENV files
 application.yml
+
+# Ignore images
+/public/uploads/*.png
+/public/uploads/*.jpg
+/public/uploads/tmp
