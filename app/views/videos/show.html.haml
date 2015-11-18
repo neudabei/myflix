@@ -21,7 +21,7 @@
         %fieldset
           .row
             .col-sm-3
-              = f.select :rating, rate_video, label: "Rate this video", class: "form-control"
+              = f.select :rating, video_rating_options, label: "Rate this video", class: "form-control"
           .row
             .col-sm-8
               = f.text_area :content, rows: 6, label: "Write Review", class: "form-control"
